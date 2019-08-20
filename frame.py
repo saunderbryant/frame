@@ -1,8 +1,8 @@
 import pygame
 import glob
 import random
-import Pillow
-from Pillow import Image
+import PIL
+from PIL import Image
 import os
 import shutil
 
@@ -93,22 +93,15 @@ def resizeimage(filename):
     #CHECK HERE TO MAKE SURE THAT HEIGHE IS AT LEAST 480, IF NOT, RESIZE USING HEIGHT
     if wpercent * float(im.size[1]) >= 480:
         hsize = int((float(im.size[1]) * float(wpercent)))
-        im = im.resize((800, hsize), Pillow.Image.ANTIALIAS)
+        im = im.resize((800, hsize), PIL.Image.ANTIALIAS)
     else:
         hpercent = (480 / float(im.size[1]))
         wsize = int((float(im.size[0]) * float(hpercent)))
-        im = im.resize((wsize, 480), Pillow.Image.ANTIALIAS)
+        im = im.resize((wsize, 480), PIL.Image.ANTIALIAS)
     if os.path.isfile('current_img.jpg'):
         os.remove('current_img.jpg')
     im.save('current_img.jpg')
 
 run_frame()
-
-#print(resizeimage("02.jpg"))
-
-#wps = get_wallpapers()
-#num_wps = len(wps.keys())
-
-#print(wps)
 
 
