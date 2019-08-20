@@ -1,8 +1,6 @@
-#import sys
 import pygame
 import glob
 import random
-#import time
 import Pillow
 from Pillow import Image
 import os
