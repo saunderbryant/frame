@@ -102,6 +102,7 @@ def resizeimage(filename):
         os.remove('current_img.jpg')
     im.save('current_img.jpg')
 
-run_frame()
+if __name__ == "__main__":
+    run_frame()
 
 
